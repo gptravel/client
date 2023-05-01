@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './TravelForm.css';
 
 const TravelForm = () => {
@@ -10,6 +11,8 @@ const TravelForm = () => {
     const [purpose, setPurpose] = useState('');
     const [accompany, setAccompany] = useState('혼자');
   
+    const navigate = useNavigate();
+
     const handleSubmit = async (e) => {
       e.preventDefault();
   
@@ -22,8 +25,6 @@ const TravelForm = () => {
         purpose,
         accompany,
       };
-
-      console.log(formData)
   
       const requestOptions = {
         method: 'POST',
@@ -33,8 +34,13 @@ const TravelForm = () => {
   
       const response = await fetch('http://127.0.0.1:8000/api/recommend/', requestOptions);
       const data = await response.json();
-  
-      // 응답 처리 로직을 작성하세요.
+      
+      console.log(data)
+      if (response.ok) {
+        navigate("/recommendations", {state: data})
+      } else {
+
+      }
     };
 
   return (
