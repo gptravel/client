@@ -1,0 +1,82 @@
+@font-face {
+    font-family: 'GangwonEduSaeeum_OTFMediumA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEduSaeeum_OTFMediumA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'GangwonEduSaeeum_OTFMediumA';
+    font-size: 20px;
+}
+
+header{
+    height: 40px;
+    font-size: 20px;
+    padding: 8px 0 0 0;
+    background-color: skyblue;
+    text-align: center;
+}
+
+body {
+    background-color: #f8f8f8;
+}
+
+main {
+    height: 100%;
+    width: 750px;
+    background-color: #f8f8f8;
+    padding: 2rem;
+    margin: 0 auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    text-align: left;
+}
+
+input[type="number"],
+input[type="text"],
+select,
+textarea {
+    display: inline-block;
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    display: block;
+    margin: 1rem auto 0;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+footer {
+    height: 200px;
+    background-color: white;
+    text-align: center;
+    color: rgb(170, 170, 170);
+    padding: 50px;
+    font-size: 10px;
+}
