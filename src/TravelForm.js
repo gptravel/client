@@ -35,7 +35,6 @@ const TravelForm = () => {
       const response = await fetch('https://port-0-server-3nec02mlh6ed3go.sel4.cloudtype.app/api/recommend/', requestOptions);
       const data = await response.json();
       
-      console.log(data)
       if (response.ok) {
         navigate("/recommendations", {state: data})
       } else {

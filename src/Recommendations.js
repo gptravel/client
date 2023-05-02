@@ -47,42 +47,10 @@ const OpenAIComponent = () => {
       </header>
       <main>
         {answer && (
-          <div>
-            <p dangerouslySetInnerHTML={{ __html: answer }}></p>
+          <div class="answer">
+            <p id="answer" dangerouslySetInnerHTML={{ __html: answer }}></p>
           </div>
         )}
-        {/* <table>
-        <tr>
-            <th>시간</th>
-            <td>지역</td>
-            <td>비용</td>
-            <td>시부야</td>
-          </tr>
-          <tr>
-            <th>오전</th>
-            <td>도쿄</td>
-            <td>1만원</td>
-            <td>시부야</td>
-          </tr>
-          <tr>
-            <th>점심</th>
-            <td>윤태호</td>
-            <td>경영학</td>
-            <td>20180863</td>
-          </tr>
-          <tr>
-            <th>오후</th>
-            <td>윤태호</td>
-            <td>경영학</td>
-            <td>20180863</td>
-          </tr>
-          <tr>
-            <th>저녁</th>
-            <td>윤태호</td>
-            <td>경영학</td>
-            <td>20180863</td>
-          </tr>
-        </table> */}
       </main>
       <footer>
         Copyright © 2023 서강대학교 윤태호. All right Reserved.
