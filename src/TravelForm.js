@@ -32,7 +32,7 @@ const TravelForm = () => {
         body: JSON.stringify(formData),
       };
   
-      const response = await fetch('http://127.0.0.1:8000/api/recommend/', requestOptions);
+      const response = await fetch('https://port-0-server-3nec02mlh6ed3go.sel4.cloudtype.app/api/recommend/', requestOptions);
       const data = await response.json();
       
       console.log(data)
