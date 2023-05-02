@@ -16,7 +16,7 @@ const OpenAIComponent = () => {
       };
 
       try {
-        const response = await fetch("https://port-0-server-3nec02mlh6ed3go.sel4.cloudtype.app/api/generate-answer/", requestOptions);
+        const response = await fetch("http://127.0.0.1:8000/api/generate-answer/", requestOptions);
         // const response = null
         if (response.body) {
           const reader = response.body.getReader();
@@ -35,10 +35,24 @@ const OpenAIComponent = () => {
       } catch (error) {
         console.error("Error fetching answer:", error);
       }
-    };
+    } 
 
     fetchData();
   }, [state]);
+
+  const displayLabel = (key) => {
+    const labels = {
+      month: "날짜",
+      duration: "기간",
+      where: "여행지",
+      budget: "총예산",
+      keyword: "여행키워드",
+      purpose: "여행목적",
+      accompany: "동행인",
+    };
+
+    return labels[key] || key;
+  };
 
   return (
     <div>
@@ -46,8 +60,22 @@ const OpenAIComponent = () => {
         여행지 추천 결과
       </header>
       <main>
+        <div className="state-info">
+          <h2>입력한 정보:</h2>
+          {state &&
+            Object.entries(state)
+              .filter(([key]) => key !== "id") // id를 제외하고 필터링
+              .map(([key, value]) => (
+                <p key={key}>
+                  {displayLabel(key)}: {value}
+                </p>
+              ))}
+        </div>
         {answer && (
           <div class="answer">
+            <div>
+              {/* {`${month} / ${duration} / ${where} / ${budget} / ${keyword} / ${purpose} / ${accompany}`} */}
+            </div>
             <p id="answer" dangerouslySetInnerHTML={{ __html: answer }}></p>
           </div>
         )}

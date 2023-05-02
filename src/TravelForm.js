@@ -66,7 +66,7 @@ const TravelForm = () => {
           </div>
 
           <div className="form-group">
-            <label htmlFor="budget">생각하고 있는 여행의 총 경비를 알려주세요</label>
+            <label htmlFor="budget">생각하고 있는 여행의 총 경비를 인당 기준으로 알려주세요</label>
             <input type="text" id="budget" name="budget" onChange={(e) => setBudget(e.target.value)} required />
           </div>
 
