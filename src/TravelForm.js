@@ -4,9 +4,9 @@ import './TravelForm.css';
 
 const TravelForm = () => {
     const [month, setMonth] = useState('');
-    const [duration, setDuration] = useState('당일치기');
+    const [duration, setDuration] = useState('1');
     const [budget, setBudget] = useState('');
-    const [where, setWhere] = useState('');
+    const [where, setWhere] = useState('추천해줘');
     const [keyword, setKeyword] = useState('');
     const [purpose, setPurpose] = useState('');
     const [accompany, setAccompany] = useState('혼자');
@@ -59,10 +59,10 @@ const TravelForm = () => {
           <div className="form-group">
             <label htmlFor="duration">몇 박 며칠로 가실 건가요?</label>
             <select id="duration" name="duration" value={duration} onChange={(e) => setDuration(e.target.value)} >
-              <option value="당일치기">당일치기</option>
-              <option value="1박2일">1박 2일</option>
-              <option value="2박3일">2박 3일</option>
-              <option value="3박4일">3박 4일</option>
+              <option value="1">당일치기</option>
+              <option value="2">1박 2일</option>
+              <option value="3">2박 3일</option>
+              <option value="4">3박 4일</option>
             </select>
           </div>
 
@@ -73,7 +73,7 @@ const TravelForm = () => {
 
           <div className="form-group">
             <label htmlFor="where">어디로 가고싶으신가요? 나라와 지역을 입력해주세요. (추천받고 싶다면 비워주세요!)</label>
-            <input type="text" id="where" name="where" onChange={(e) => setWhere(e.target.value)} required />
+            <input type="text" id="where" name="where" onChange={(e) => setWhere(e.target.value)} />
           </div>
 
           <div className="form-group">
