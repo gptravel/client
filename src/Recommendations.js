@@ -16,7 +16,7 @@ const OpenAIComponent = () => {
       };
 
       try {
-        const response = await fetch("http://127.0.0.1:8000/api/generate-answer/", requestOptions);
+        const response = await fetch("https://port-0-server-3nec02mlh6ed3go.sel4.cloudtype.app/api/generate-answer/", requestOptions);
         // const response = null
         if (response.body) {
           const reader = response.body.getReader();
