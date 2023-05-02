@@ -1,6 +1,7 @@
 // OpenAIComponent.js
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import './TravelForm.css'
 
 const OpenAIComponent = () => {
   const { state } = useLocation();
@@ -42,13 +43,19 @@ const OpenAIComponent = () => {
 
   return (
     <div>
-      <h2>Ask OpenAI</h2>
-      {answer && (
-        <div>
-          <h3>Answer:</h3>
-          <p dangerouslySetInnerHTML={{ __html: answer }}></p>
-        </div>
-      )}
+      <header>
+        여행지 추천 결과
+      </header>
+      <main>
+        {answer && (
+          <div>
+            <p dangerouslySetInnerHTML={{ __html: answer }}></p>
+          </div>
+        )}
+      </main>
+      <footer>
+        Copyright © 2023 서강대학교 윤태호. All right Reserved.
+      </footer>
     </div>
   );
 };
