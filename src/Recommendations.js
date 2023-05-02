@@ -1,11 +1,10 @@
 // OpenAIComponent.js
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import './TravelForm.css'
+import './Recommendations.css'
 
 const OpenAIComponent = () => {
   const { state } = useLocation();
-  console.log(state);
   const [answer, setAnswer] = useState("");
 
   useEffect(() => {
@@ -18,7 +17,7 @@ const OpenAIComponent = () => {
 
       try {
         const response = await fetch("http://127.0.0.1:8000/api/generate-answer/", requestOptions);
-
+        // const response = null
         if (response.body) {
           const reader = response.body.getReader();
           let result = "";
@@ -52,6 +51,38 @@ const OpenAIComponent = () => {
             <p dangerouslySetInnerHTML={{ __html: answer }}></p>
           </div>
         )}
+        {/* <table>
+        <tr>
+            <th>시간</th>
+            <td>지역</td>
+            <td>비용</td>
+            <td>시부야</td>
+          </tr>
+          <tr>
+            <th>오전</th>
+            <td>도쿄</td>
+            <td>1만원</td>
+            <td>시부야</td>
+          </tr>
+          <tr>
+            <th>점심</th>
+            <td>윤태호</td>
+            <td>경영학</td>
+            <td>20180863</td>
+          </tr>
+          <tr>
+            <th>오후</th>
+            <td>윤태호</td>
+            <td>경영학</td>
+            <td>20180863</td>
+          </tr>
+          <tr>
+            <th>저녁</th>
+            <td>윤태호</td>
+            <td>경영학</td>
+            <td>20180863</td>
+          </tr>
+        </table> */}
       </main>
       <footer>
         Copyright © 2023 서강대학교 윤태호. All right Reserved.
